@@ -1,0 +1,25 @@
+SELECT u.id, a.id_writer, a.time, f.user_from, f.user_to, f.isFriend FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN friendRelation f ON (u.id = f.user_from OR u.id = f.user_to) AND f.isFriend = 1 WHERE f.user_from = 1 OR f.user_to = 1 and u.id != 1 ORDER BY a.time DESC;
+
+SELECT * FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN friendRelation f ON (u.id = f.user_from OR u.id = f.user_to) AND f.isFriend = 1 WHERE f.user_from = '4' OR f.user_to = '4' and u.id != '4' ORDER BY a.time DESC;
+
+SELECT * FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN friendRelation f ON (u.id = f.user_from OR u.id = f.user_to) AND f.isFriend = 1 WHERE (f.user_from = '4' OR f.user_to = '4') AND u.id != '4' ORDER BY time DESC;
+
+
+SELECT u.name, a.content, a.time FROM article a INNER JOIN userData u ON u.id = a.id_writer WHERE u.email = 'test1'
+UNION
+SELECT u.name, a.content, a.time FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN 
+
+
+
+SELECT * FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN friendRelation f ON u.id = f.user_from AND f.isFriend = 1 WHERE user_from = 1 ORDER BY time DESC;
+
+SELECT * FROM article a INNER JOIN userData u ON u.id = a.id_writer INNER JOIN friendRelation f ON u.id = f.user_from AND f.isFriend = 1 and f.user_from = 1 ORDER BY time DESC;
+
+SELECT * FROM article a INNER JOIN userData u ON u.id = a.id_writer WHERE u.id IN (SELECT f.user_to FROM userData u INNER JOIN friendRelation f ON f.user_from = u.id AND f.isFriend = 1 WHERE u.id = 1) OR u.id = 1 ORDER BY time DESC;
+
+
+### FINAL
+SELECT u.name, a.content, a.time FROM article a INNER JOIN userData u ON u.id = a.id_writer WHERE u.id IN (SELECT f.user_to FROM userData u INNER JOIN friendRelation f ON f.user_from = u.id AND f.isFriend = 1 WHERE u.id = 1) OR u.id = 1 ORDER BY time DESC;
+
+
+SELECT u.id FROM article a INNER JOIN userData u ON u.id = a.id_writer WHERE u.id IN (SELECT user_from FROM friendRelation WHERE user_to = '1' AND isFriend = 1) OR (SELECT user_to FROM friendRelation WHERE user_from = '1' AND isFriend = 1) OR u.id = '1' ORDER BY time DESC;

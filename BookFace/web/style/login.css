@@ -1,0 +1,113 @@
+div#header>#login {
+	position: relative;
+	float: right;
+	width: 400px;
+	height: 100%;
+	margin-right: 10px;
+}
+
+#login>#loginInput {
+	position: absolute;
+	display: block;
+	top: 50%;
+	margin-top: -15px;
+}
+
+#loginInput>input {
+	width: 150px;
+	height: 15px;
+	margin-left: 5px;
+	padding: 5px;
+}
+
+#login>.button {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -15px;
+}
+
+div#status {
+	position: absolute;
+	width: 500px;
+	top: 50px;
+	left: 50%;
+	margin-left: -250px;
+}
+
+div#status>p {
+	padding: 5px;
+	text-align: center;
+}
+
+div#status>p.warning {
+	background-color: #FFE6E6;
+	border: 2px solid red;
+}
+
+div#status>p.success {
+	background-color: #E6FFE6;
+	border: 2px solid green;
+}
+
+div#registerWrapper {
+	position: absolute;
+	width: 800px;
+	height: 400px;
+	left: 50%;
+	margin-left: -400px;
+	top: 50%;
+	margin-top: -160px;
+}
+
+div#registerWrapper>#img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background-image: url(../img/Notes.jpg);
+	background-size: 85%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div#registerWrapper>#registerInput {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+
+div#registerInput h1 {
+	position: absolute;
+	font-size: 35px;
+	font-weight: 700;
+	top: 40px;
+}
+
+div#registerInput>form {
+	position: absolute;
+	padding: 50px;
+	top: 60px;
+	right: 0;
+}
+
+div#registerInput>form>input {
+	padding: 10px;
+	width: 300px;
+	font-size: 15px;
+	margin-top: 10px;
+}
+
+div#registerInput>form>input[type=submit] {
+	padding: 10px;
+	width: 100px;
+	font-size: 17px;
+	float: right;
+	margin-top: 30px;
+
+	border: 1px solid #2EB82E;
+	background-color: #2EB82E;
+}

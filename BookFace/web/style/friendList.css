@@ -1,0 +1,86 @@
+div#header>#search {
+	position: relative;
+	height: 100%;
+	left: 30px;
+}
+
+#search>input[type=text] {
+	position: absolute;
+	display: block;
+	width: 250px;
+	height: 20px;
+	padding-left: 7px;
+	top: 50%;
+	margin-top: -13px;
+}
+
+#search>input[type=submit] {
+	position: absolute;
+	top: 50%;
+	height: 26px;
+	margin-top: -13px;
+	left: 265px;
+
+	border: 1px solid #2EB82E;
+	background-color: #2EB82E;
+}
+
+
+div#header>#login {
+	position: relative;
+	float: right;
+	width: 300px;
+	height: 100%;
+	margin-right: 10px;
+}
+
+div#login>p {
+	position: absolute;
+	display: block;
+	text-align: right;
+	width: 220px;
+	top: 50%;
+	margin-top: -10px;
+}
+
+div#login>a {
+	position: absolute;
+	top: 50%;
+	margin-top: -15px;
+	right: 0;
+}
+
+div#userListWrapper {
+	position: relative;
+	width: 100%;
+}
+
+div#userList {
+	position: absolute;
+	width: 600px;
+	left: 50%;
+	margin-left: -300px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+div.user {
+	padding: 15px 15px 15px 55px;
+	border-top: 1px solid #DDDDDD;
+}
+
+div.user * {
+	display: block;
+	padding: 4px 0px;
+}
+
+div.user>.name {
+	font-size: 13px;
+	font-weight: 800;
+	color: #3B5998;
+}
+
+div.user>.email {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.28;
+}

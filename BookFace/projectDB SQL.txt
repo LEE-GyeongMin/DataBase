@@ -1,0 +1,33 @@
+CREATE TABLE `userData` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) NOT NULL,
+  `password` char(40) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `birth` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `article` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_writer` int(11) NOT NULL,
+  `content` varchar(200) DEFAULT 'Default text',
+  `time` datetime DEFAULT NOW(),
+  PRIMARY KEY (`id`),
+  KEY `fk_article_userData1_idx` (`id_writer`),
+  CONSTRAINT `fk_article_userData1` FOREIGN KEY (`id_writer`) REFERENCES `userData` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+CREATE TABLE `friendRelation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_from` int(11) NOT NULL,
+  `user_to` int(11) NOT NULL,
+  `isFriend` boolean NOT NULL DEFAULT false,
+  PRIMARY KEY (`id`),
+  KEY `fk_userData_has_userData_userData1_idx` (`user_to`),
+  KEY `fk_userData_has_userData_userData_idx` (`user_from`),
+  CONSTRAINT `fk_userData_has_userData_userData` FOREIGN KEY (`user_from`) REFERENCES `userData` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_userData_has_userData_userData1` FOREIGN KEY (`user_to`) REFERENCES `userData` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
